@@ -1,0 +1,28 @@
+.deleteBtn {
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    padding: 0px !important;
+}
+.deleteBtn:hover {
+    background: white;
+}
+.deleteBtn:hover > i {
+    color: #ff4c3b !important;
+}
+
+.editBtn {
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    padding: 7px !important;
+    margin-right: 5px;
+}
+
+.editBtn:hover {
+    background: black !important;
+}
+.editBtn:hover > i {
+    color: white !important;
+}
+
