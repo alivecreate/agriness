@@ -44,3 +44,5 @@
 <link rel="stylesheet" type="text/css" href="{{asset('backend')}}/css/style.css">
 <link rel="stylesheet" type="text/css" href="{{asset('backend')}}/css/custom.css">
 
+
+@yield('custom-style')

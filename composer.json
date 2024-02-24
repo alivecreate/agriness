@@ -29,7 +29,8 @@
         },
         
         "files": [
-            "app/Helpers/sliderHelpers.php",        
+            "app/Helpers/sliderHelpers.php",    
+            "app/Helpers/categoryHelpers.php",    
             "app/helpers.php"
         ]
     },

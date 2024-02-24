@@ -5,6 +5,11 @@
     
     <script src="{{asset('backend')}}/js/dropzone/dropzone.js"></script>
     <script src="{{asset('backend')}}/js/dropzone/dropzone-script.js"></script>
+    <script>
+        $(".slider").addClass( "active");
+        $(".slider .sidebar-submenu").addClass( "menu-open");
+    </script>
+    
 @endsection
 
 @section('content')
@@ -17,20 +22,20 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="page-header-left">
-                        <h3>Slider List
-                            <small>List of Home Sliders</small>
+                        <h3>{{ isset($page['name']) ? $page['name'] : 'item' }} List
+                            <small>List of {{ isset($page['name']) ? $page['name'] : 'item' }}</small>
                         </h3>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <ol class="breadcrumb pull-right">
                         <li class="breadcrumb-item">
-                            <a href="index.html">
+                            <a href="{{route('admin.index')}}">
                                 <i data-feather="home"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item">Sliders</li>
-                        <li class="breadcrumb-item active">Slider List</li>
+                        <li class="breadcrumb-item">{{ isset($page['name']) ? $page['name'] : 'item' }}</li>
+                        <li class="breadcrumb-item active">{{ isset($page['name']) ? $page['name'] : 'item' }} List</li>
                     </ol>
                 </div>
             </div>
@@ -47,7 +52,7 @@
                     </div>
                 </form>
 
-                <a href="{{route('slider.create')}}" class="btn btn-primary mt-md-0 mt-2">Add New Slide</a>
+                <a href="{{route('slider.create')}}" class="btn btn-primary mt-md-0 mt-2">Add New {{ isset($page['name']) ? $page['name'] : 'item' }}</a>
             </div>
             <div class="card-body vendor-table">
                 <table class="display" id="basic-1">
@@ -103,7 +108,7 @@
 
                 @include('admin.widget.delete-modal', 
                     [
-                        'message' =>'Are You Sure You Want To Delete this Slider?'
+                        "message" => "Are You Sure You Want To Delete this ".$page['name']." ?"
                     ])
 
 
@@ -112,14 +117,6 @@
         </div>
     </div>
 </div>
-
-
-
-    <!-- added to cart notification -->
-    <div class="added-notification">
-        <img src="../assets/images/fashion/pro/1.jpg" class="img-fluid" alt="">
-        <h3>added to cart</h3>
-    </div>
 
 
 @endsection

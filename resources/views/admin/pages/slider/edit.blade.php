@@ -4,6 +4,12 @@
 @section('custom-script')
     <script src="{{asset('backend')}}/js/dropzone/dropzone.js"></script>
     <script src="{{asset('backend')}}/js/dropzone/dropzone-script.js"></script>
+    
+    <script>
+        $(".slider").addClass( "active");
+        $(".slider .sidebar-submenu").addClass( "menu-open");
+    </script>
+    
 @endsection
 
 @section('content')
@@ -15,20 +21,20 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="page-header-left">
-                        <h3>Add Slider
-                            <small>Home Page Slider</small>
+                        <h3>Add {{ isset($page['name']) ? $page['name'] : 'item' }}
+                            <small>Home Page {{ isset($page['name']) ? $page['name'] : 'item' }}</small>
                         </h3>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <ol class="breadcrumb pull-right">
                         <li class="breadcrumb-item">
-                            <a href="index.html">
+                            <a href="{{route('admin.index')}}">
                                 <i data-feather="home"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item">Pages</li>
-                        <li class="breadcrumb-item active">Create Page</li>
+                        <li class="breadcrumb-item">{{ isset($page['name']) ? $page['name'] : 'item' }}</li>
+                        <li class="breadcrumb-item active">Create {{ isset($page['name']) ? $page['name'] : 'item' }}</li>
                     </ol>
                 </div>
             </div>
@@ -50,7 +56,7 @@
                     <div class="tab-pane fade active show" id="general" role="tabpanel"
                         aria-labelledby="general-tab">
                             
-                        <form class="needs-validation" action="{{ route('slider.store') }}" method="POST" enctype="multipart/form-data">
+                        <form class="needs-validation data-form" action="{{ route('slider.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" value="image" name="type">
                             <div class="form-group row">
@@ -97,7 +103,7 @@
 
                             <div class="form-group">
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>  Save Image</button>
+                                    <button type="submit" class="btn btn-primary btn-submit"><i class="fa fa-save"></i>  Save Image</button>
                                 </div>
                             </div>
                         </form>
@@ -137,7 +143,7 @@
 
                             <div class="form-group">
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-primary"><i class="fa fa-save"></i>  Save Video</button>
+                                    <button type="button" class="btn btn-primary btn-submit"><i class="fa fa-save"></i>  Save Video</button>
                                 </div>
                             </div>
                             

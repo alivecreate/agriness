@@ -47,6 +47,8 @@ function uploadImageThumb($request, $fileName = null, $prefix = null){
         new Intervention\Image\Drivers\Gd\Driver()
     );
     
+    
+    if (request()->hasFile('image')) {
     // open an image file
     $image = $manager->read($request->file('image'));
     $image_name = $prefix.time().'_'.rand(111,999).'.webp';
@@ -87,8 +89,12 @@ function uploadImageThumb($request, $fileName = null, $prefix = null){
     $lgImage = $manager->read($request->file('image'));
     $lgImage->scaleDown(width: 3000);
     $lgImage->save($lgPath.'/'.$image_name);
-
+    
     return $image_name;
+    }
+    else{
+        return null;
+    }
 
 }
 

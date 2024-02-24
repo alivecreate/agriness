@@ -11,17 +11,19 @@ class SliderController extends Controller
 {
     public function index()
     {
-        $result = myCustomFunction();
-
-        getSlider();
+        $page = [
+            'name' => 'Slider'
+        ];
         $slider = Slider::all(); // Retrieve all sliders from the database
-        return view('admin.pages.slider.index', compact('slider'));
+        return view('admin.pages.slider.index', compact('page', 'slider'));
     }
 
     public function create()
     {        
-        $result = myCustomFunction();
-        return view('admin.pages.slider.create');
+        $page = [
+            'name' => 'Testimonial'
+        ];
+        return view('admin.pages.slider.create', compact('page'));
     }
 
     public function store(Request $request)
@@ -42,9 +44,6 @@ class SliderController extends Controller
         }
         
         $image_name = uploadImageThumb($request);
-
-        // $imagePath = $request->file('image')->store('slider_images', 'public');
-
 
         Slider::create([
             'item_no' => $item_no,
@@ -74,14 +73,12 @@ class SliderController extends Controller
     public function destroy($id)
     {
         $slider = Slider::find($id);
-
         if (!$slider) {
             return redirect()->route('slider.index')->with('error', 'Slider not found.');
         }
 
         $slider->delete();
         deleteImages($slider->image);
-
         return redirect()->route('slider.index')->with('success', 'Slider deleted successfully.');
     
     }

@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\front\PageController;
+use App\Http\Controllers\admin\SliderController;
+use App\Http\Controllers\admin\TestimonialController;
+use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\ProductController;
 
 
 /*
@@ -23,16 +26,10 @@ Route::prefix('/' . $adminName)->group(function () {
         return view('admin.index');
     })->name('admin.index');
 
-    Route::get('/category', function () {
-        return 'Category page';
-    })->name('admin.category');
-
-    Route::get('/product', function () {
-        return 'product page';
-    })->name('admin.product');
-
-
     Route::resource('slider', SliderController::class);
+    Route::resource('testimonial', TestimonialController::class);
+    Route::resource('category', CategoryController::class);
+    Route::resource('product', ProductController::class);
 
 });
 

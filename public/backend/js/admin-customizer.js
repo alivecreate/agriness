@@ -60,5 +60,59 @@ function deleteBtn(event) {
     $('.deleteForm').attr('action', event);
     console.log('Deleted button ID:', sliderId);
 
+
     
+    
+}
+
+$(document).ready(function () {
+  
+  $(".data-form").on("submit", function () {
+    $(".btn-submit").prop("disabled", true);
+});
+});
+
+
+$(document).ready(function () {
+
+  $(".url-slug").on("keyup", function () {
+    // alert($(".url-slug").text());
+      var inputText = $(this).val();
+      var slug = generateSlug(inputText);
+      $(this).val(slug);
+  });
+  
+  $(".slug-generator").on("keyup", function () {
+    var inputText = $(this).val();
+    var slug = generateSlug(inputText);
+    $('.url-slug').val(slug);
+  });
+
+  function generateSlug(text) {
+      console.log(text.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''));
+      return text.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]+/g, '-').trim();
+  }
+});
+
+function previewImages() {
+    var preview = document.getElementById('images-preview');
+    preview.innerHTML = '';
+
+    var files = document.getElementById('images').files;
+    console.log(files)
+
+    for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.width = '100px'; // Set the thumbnail width
+            img.style.height = '100px'; // Set the thumbnail height
+            preview.appendChild(img);
+        }
+
+        reader.readAsDataURL(file);
+    }
 }

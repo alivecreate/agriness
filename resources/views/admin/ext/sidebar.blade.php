@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <ul class="sidebar-menu">
-                        <li>
+                        <li class="dashboard">
                             <a class="sidebar-header" href="{{route('admin.index')}}">
                                 <i data-feather="home"></i>
                                 <span>Dashboard</span>
@@ -28,7 +28,7 @@
                         </li>
 
                         
-                        <li>
+                        <li class="slider">
                             <a class="sidebar-header" href="javascript:void(0)">
                                 <i data-feather="image"></i>
                                 <span>Sliders</span>
@@ -50,7 +50,7 @@
                             </ul>
                         </li>
 
-                        <li>
+                        <li class="category">
                             <a class="sidebar-header" href="javascript:void(0)">
                                 <i data-feather="activity"></i>
                                 <span>Categories</span>
@@ -59,20 +59,20 @@
 
                             <ul class="sidebar-submenu">
                                 <li>
-                                    <a href="product-listdigital.html">
+                                    <a href="{{route('category.index')}}">
                                         <i class="fa fa-circle"></i>Category List
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="add-digital-product.html">
+                                    <a href="{{route('category.create')}}">
                                         <i class="fa fa-circle"></i>Add Category
                                     </a>
                                 </li>
                             </ul>
                         </li>
 
-                        <li>
+                        <li class="product">
                             <a class="sidebar-header" href="javascript:void(0)">
                                 <i data-feather="box"></i>
                                 <span>Products</span>
@@ -81,20 +81,20 @@
 
                             <ul class="sidebar-submenu">
                                 <li>
-                                    <a href="product-listdigital.html">
+                                    <a href="{{route('product.index')}}">
                                         <i class="fa fa-circle"></i>Product List
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="add-digital-product.html">
+                                    <a href="{{route('product.create')}}">
                                         <i class="fa fa-circle"></i>Add Product
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         
-                        <li>
+                        <li class="testimonial">
                             <a class="sidebar-header" href="javascript:void(0)">
                                 <i data-feather="box"></i>
                                 <span>Testimonial</span>
@@ -103,20 +103,20 @@
 
                             <ul class="sidebar-submenu">
                                 <li>
-                                    <a href="product-listdigital.html">
+                                    <a href="{{route('testimonial.index')}}">
                                         <i class="fa fa-circle"></i>Testimonial List
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="add-digital-product.html">
+                                    <a href="{{route('testimonial.create')}}">
                                         <i class="fa fa-circle"></i>Add Testimonial
                                     </a>
                                 </li>
                             </ul>
                         </li>
 
-                        <li>
+                        <li class="blog">
                             <a class="sidebar-header" href="javascript:void(0)">
                                 <i data-feather="box"></i>
                                 <span>Blog</span>
@@ -138,7 +138,7 @@
                             </ul>
                         </li>
                         
-                        <li>
+                        <li class="team">
                             <a class="sidebar-header" href="javascript:void(0)">
                                 <i data-feather="user-check"></i>
                                 <span>Team</span>
@@ -161,7 +161,7 @@
                         </li>
                         
 
-                        <li>
+                        <li class="customer">
                             <a class="sidebar-header" href="javascript:void(0)">
                                 <i data-feather="users"></i>
                                 <span>Customer</span>
@@ -181,7 +181,7 @@
                             </ul>
                         </li>
 
-                        <li>
+                        <li class="report">
                             <a class="sidebar-header" href="reports.html"><i
                                     data-feather="bar-chart"></i><span>Reports</span>
                             </a>

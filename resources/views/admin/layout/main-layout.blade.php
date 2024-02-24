@@ -27,6 +27,7 @@
     </div>
 
 @include('admin.ext.script')
+
 </body>
 
 </html>

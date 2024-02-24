@@ -26,3 +26,11 @@
     color: white !important;
 }
 
+#image-preview{
+    max-height: 200px;
+    width: 200px;
+}
+#images-preview{
+    display: block;
+    width: 100%;
+}
